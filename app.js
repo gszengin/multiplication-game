@@ -56,9 +56,11 @@ function nextQuestion(){
 
 function checkAnswer (buttonIndex) {
     
-    let answer = document.getElementById("btn" + buttonIndex).innerHTML;
-    if(answer == correctAnswer) score +=1
+    	let answer = document.getElementById("btn" + buttonIndex).innerHTML;
+    	if(answer == correctAnswer) score +=1
         document.getElementById("currentScore").innerHTML = "Current Score: " + score;
+	if (score > highScore) highScore = score;
+	document.getElementById("currentScore").inerHTML = "Current Score: " + score;
         nextQuestion();
     
 }
