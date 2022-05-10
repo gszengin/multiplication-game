@@ -56,11 +56,11 @@ function nextQuestion(){
 function checkAnswer (buttonIndex) {
     
     let answer = document.getElementById("btn" + buttonIndex);
-    if(answer == correctAnswer){
-        currentScore +=1
-        document.getElementById("currentScore").innerHTML = "Current Score: " + currentScore;
+    if(answer == correctAnswer)
+        score +=1
+        document.getElementById("currentScore").innerHTML = "Current Score: " + score;
         nextQuestion();
-    }
+    
 }
 
 
