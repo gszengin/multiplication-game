@@ -9,7 +9,8 @@ let secondNum =0;
 let timeLeft =10;
 let timerInterval;
 let highScore = 0;
-let currentScore = 0;
+let score = 0;
+let correctAnswer=0;
 
 
 function startGame(){
@@ -55,9 +56,8 @@ function nextQuestion(){
 
 function checkAnswer (buttonIndex) {
     
-    let answer = document.getElementById("btn" + buttonIndex);
-    if(answer == correctAnswer)
-        score +=1
+    let answer = document.getElementById("btn" + buttonIndex).innerHTML;
+    if(answer == correctAnswer) score +=1
         document.getElementById("currentScore").innerHTML = "Current Score: " + score;
         nextQuestion();
     
