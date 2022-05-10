@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<link rel="stylesheet" href="app.css" type="text/css" />
+
+	</HEAD>
+	<BODY>
+	    
+	    <div id="highScore" >0</div>
+	    <div id="currentScore" >0</div>
+	    <br>
+	    
+		This is my multiplication game
+		<br><br>
+		<button onclick="startGame()" id="startBtn">START</button>
+		
+		<div id="timeDisplay" hidden>Time Left : 10</div>
+		
+		<br><br>
+		
+		What is the answer?
+		<br><br>
+		<div class="h1" id="operation">0 * 0</div>
+		<br>
+		<button onclick="checkAnswer(1)" id="btn1">0</button>
+		<button onclick="checkAnswer(2)" id="btn2">0</button>
+		<br>
+		<button onclick="checkAnswer(3)" id="btn3">0</button>
+		<button onclick="checkAnswer(4)" id="btn4">0</button>
+		
+	</BODY>
+</HTML>
