@@ -78,7 +78,7 @@ function checkAnswer (buttonIndex) {
     
     let answer = document.getElementById("btn" + buttonIndex).innerHTML;
 	
-    if (answer != corectAnswer) score -=1;
+    if (answer !== corectAnswer) score -=1;
     document.getElementById("currentScore").innerHTML = "Current Score: " + score;
 	
     if(answer == correctAnswer) score +=1;
