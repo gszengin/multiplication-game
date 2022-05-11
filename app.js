@@ -8,6 +8,12 @@ window.onload = function()
     let scoreFromBrowser = localStorage.getItem("highScore");
     if(scoreFromBrowser != undefined) highScore = scoreFromBrowser;
     document.getElementById("highScore").innerHTML = "High Score: " + highScore;
+    
+    document.getElementById("btn1").disabled = true;
+    document.getElementById("btn2").disabled = true;
+    document.getElementById("btn3").disabled = true;
+    document.getElementById("btn4").disabled = true;
+	
 }
 
 let firstNum =0;
@@ -19,6 +25,11 @@ let score = 0;
 let correctAnswer = 0;
 
 function startGame(){
+    document.getElementById("btn1").disabled = false;
+    document.getElementById("btn2").disabled = false;
+    document.getElementById("btn3").disabled = false;
+    document.getElementById("btn4").disabled = false;
+	
     document.getElementById("startBtn").disabled = true;
     let timeDisplay = document.getElementById("timeDisplay");
     timeDisplay.hidden = false;
