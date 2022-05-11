@@ -3,15 +3,20 @@ window.onload = function ()
 	   alert("Good Luck :-)");
 }
 
+window.onload = function()
+{
+    let scoreFromBrowser = localStorage.getItem("highScore");
+    if(scoreFromBrowser != undefined) highScore = scoreFromBrowser;
+    document.getElementById("highScore").innerHTML = "High Score: " + highScore;
+}
 
 let firstNum =0;
 let secondNum =0;
-let timeLeft =10;
+let timeLeft =60;
 let timerInterval;
 let highScore = 0;
 let score = 0;
-let correctAnswer=0;
-
+let correctAnswer = 0;
 
 function startGame(){
     document.getElementById("startBtn").disabled = true;
@@ -22,6 +27,10 @@ function startGame(){
         timeDisplay.innerHTML = "Time Left: " + timeLeft;
          if(timeLeft == 0){
             clearInterval(timerInterval);
+             document.getElementById("btn1").disabled = true;
+             document.getElementById("btn2").disabled = true;
+             document.getElementById("btn3").disabled = true;
+             document.getElementById("btn4").disabled = true;
          }
     }, 1000)
     
@@ -56,11 +65,12 @@ function nextQuestion(){
 
 function checkAnswer (buttonIndex) {
     
-    	let answer = document.getElementById("btn" + buttonIndex).innerHTML;
-    	if(answer == correctAnswer) score +=1
+    let answer = document.getElementById("btn" + buttonIndex).innerHTML;
+    if(answer == correctAnswer) score +=1;
         document.getElementById("currentScore").innerHTML = "Current Score: " + score;
-	if (score > highScore) highScore = score;
-	document.getElementById("currentScore").inerHTML = "Current Score: " + score;
+        if (score > highScore) highScore = score;
+        localStorage.setItem("highScore", highScore);
+        document.getElementById("highScore").innerHTML = "High Score: " + highScore;
         nextQuestion();
     
 }
