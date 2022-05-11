@@ -77,8 +77,10 @@ function nextQuestion(){
 function checkAnswer (buttonIndex) {
     
     let answer = document.getElementById("btn" + buttonIndex).innerHTML;
+    if (answer != corectAnswer) score -=1;
     if(answer == correctAnswer) score +=1;
-        document.getElementById("currentScore").innerHTML = "Current Score: " + score;
+	
+	document.getElementById("currentScore").innerHTML = "Current Score: " + score;
         if (score > highScore) highScore = score;
         localStorage.setItem("highScore", highScore);
         document.getElementById("highScore").innerHTML = "High Score: " + highScore;
